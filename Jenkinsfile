@@ -1,11 +1,10 @@
 pipeline {
-  agent any
+  agent { docker 'golang' }
   stages {
-    stage('error') {
+    stage('run') {
       steps {
         sh 'go run main.go'
       }
     }
-
   }
 }
